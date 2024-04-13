@@ -1,0 +1,22 @@
+div#main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+div#basketbtn{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 18px;
+    padding: 8px;
+    position: fixed;
+    right: 0;
+}
+.btn{
+    cursor: pointer;
+    user-select: none;
+}
+#basket{
+    width: 100%;
+    height: auto;
+}
