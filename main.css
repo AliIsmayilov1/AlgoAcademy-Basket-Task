@@ -24,3 +24,7 @@ div#basketbtn>i{
     width: 100%;
     height: auto;
 }
+div#main>h1{
+    width: 100%;
+    text-align: center;
+}
