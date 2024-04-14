@@ -16,6 +16,8 @@ function generateProduct() {
         </div>
         `
         document.getElementById("main").innerHTML = x
+        document.getElementById("bskt").style.display="block"
+        document.getElementById("menu").style.display="none"
     }
 }
 let myBasket = []
@@ -33,18 +35,25 @@ function addToBasket(x) {
 function basket() {
     let x = ""
     let prd = getProduct()
+    let totalPrice = 0
     for (let i = 0; i < myBasket.length; i++) {
-         x += `
+        x += `
         <div id="${prd[myBasket[i]].id}">
-            <img src="${prd[myBasket[i]].picture}" alt="">
-            <p id="name">${prd[myBasket[i]-1].name}</p>
-            <p id="price">${prd[myBasket[i]-1].price}</p>
-            <p id="${prd[myBasket[i]-1].id}" class="btn" onclick="addToBasket(${prd[i].id})" >Add to basket</p>
-        </div>
-        `
-        document.getElementById("main").innerHTML = x
+        <img src="${prd[myBasket[i]].picture}" alt="">
+        <p id="name">${prd[myBasket[i] - 1].name}</p>
+        <p id="price">${prd[myBasket[i] - 1].price}</p>
+            <p id="${prd[myBasket[i] - 1].id}" class="btn" onclick="addToBasket(${prd[i].id})" >Add to basket</p>
+            </div>
+            `
+        document.getElementById("main").innerHTML = x;
+        totalPrice += +prd[myBasket[i] - 1].price
     }
+    x += `<h1>Total Price: ${totalPrice}</h1>`
+    document.getElementById("main").innerHTML = x;
+        
     console.log(myBasket);
-
+    console.log(totalPrice);
+    document.getElementById("bskt").style.display="none"
+    document.getElementById("menu").style.display="block"
 }
 generateProduct()

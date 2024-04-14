@@ -12,6 +12,10 @@ div#basketbtn{
     position: fixed;
     right: 0;
 }
+div#basketbtn>i{
+    cursor: pointer;
+}
+
 .btn{
     cursor: pointer;
     user-select: none;
